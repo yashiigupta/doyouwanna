@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sorrybaby</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Please forgive me baby!!!</h1>
+    <div><img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" class="gif"/></div>
+    <div>
+      <button id = "yesBtn" class="buttons" onclick="handleYes()">Yes</button>
+      <button id = "noBtn" class="buttons" onclick="handleNo()" onmouseover="handleNo()">No</button>
+    </div>
+  </div>
+</body>
+<script>
+  function handleNo() {
+  var noButton = document.getElementById('noBtn');
+  var container = document.getElementsByClassName('container')[0];
+
+  var containerWidth = container.offsetWidth - noButton.offsetWidth;
+  var containerHeight = container.offsetHeight - noButton.offsetHeight;
+
+  var randomTop = Math.floor(Math.random() * containerHeight);
+  var randomLeft = Math.floor(Math.random() * containerWidth);
+
+  noButton.style.position = 'absolute';
+  noButton.style.top = randomTop + 'px';
+  noButton.style.left = randomLeft + 'px';
+}
+
+function handleYes() {
+  window.location.href = "yes.html";
+}
+</script>
+</html>
